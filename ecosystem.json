@@ -4,7 +4,7 @@
       "name": "a",
       "script": "serve",
       "env": {
-        "PM2_SERVE_PORT": 3003,
+        "PM2_SERVE_PORT": 3010,
         "PM2_SERVE_PATH": "./dist",
         "COMMON_VARIABLE": "true"
       },
