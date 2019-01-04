@@ -23,7 +23,7 @@
       "path": "/usr/share/nginx/a/production",
       "ssh_options": "StrictHostKeyChecking=no",
       "pre-deploy" : "git fetch --all",
-      "post-deploy":"npm install --registry=https://registry.npm.taobao.org && npm run build:prod && rm -rf /root/qiniu/static && cd /usr/share/nginx/a/production/current/dist && cp -a static /root/qiniu/static && rm -rf static && rm -rf /usr/share/nginx/a/production/source/dist/static && cd /root/qiniu && node upload.js && cd /usr/share/nginx/a/production/current/ && pm2 startOrRestart ecosystem.json --env production",
+      "post-deploy":"npm install --registry=https://registry.npm.taobao.org && npm run build:prod && cd /usr/share/nginx/a/production/current/ && pm2 startOrRestart ecosystem.json --env production",
       "env": {
         "NODE_ENV": "production"
       }
