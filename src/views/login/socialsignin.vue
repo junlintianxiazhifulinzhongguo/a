@@ -41,6 +41,7 @@ export default {
       loginByAlipay().then(function (data){
         console.log(data)
         a = data.auth_url
+        return a
       })
       console.log(a)
       openWindow(a, thirdpart, 540, 540)  
