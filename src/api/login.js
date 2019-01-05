@@ -16,11 +16,9 @@ export function loginByAlipay(){
   let url = request({
       url: '/api/auhRedirect',
       method: 'post'
-    }).then(response=>{
-      return response.data.auth_url
     })
   console.log(url)
-  return url    
+  //return url    
 }
 
 export function logout() {
