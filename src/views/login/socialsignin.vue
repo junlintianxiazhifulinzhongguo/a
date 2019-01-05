@@ -6,7 +6,7 @@
     <div class="sign-btn" @click="tencentHandleClick('tencent')">
       <span class="qq-svg-container"><svg-icon icon-class="qq" class="icon"/></span> QQ
     </div>
-     <div class="sign-btn" @click="tencentHandleClick('alipay')">
+     <div class="sign-btn" @click="alipayHandleClick('alipay')">
       <span class="al-svg-container"><svg-icon icon-class="alipay" class="icon"/></span> 支付宝
     </div>
   </div>
