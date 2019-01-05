@@ -46,6 +46,7 @@ export default {
        console.log('abc')
        console.log(this.auth_url)
        console.log(22222)
+       openWindow(this.auth_url, thirdpart, 540, 540)  
     },
     async alipayHandleClick(thirdpart) {
       // alert('ok')
