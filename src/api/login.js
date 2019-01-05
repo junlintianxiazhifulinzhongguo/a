@@ -13,7 +13,8 @@ export function loginByUsername(username, password) {
 }
 
 export function loginByAlipay(){
-  request({
+ let a 
+ request({
       url: '/api/auhRedirect',
       method: 'post'
     }).then(function(response){
@@ -21,8 +22,10 @@ export function loginByAlipay(){
       let { auth_url,code } = data
       console.log(code)
       console.log(auth_url)
-      return auth_url
-    })
+      a = auth_url
+      return a
+  })
+  return a
 }
 
 export function logout() {
