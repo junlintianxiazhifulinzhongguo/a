@@ -14,7 +14,7 @@ export function loginByUsername(username, password) {
 
 export function loginByAlipay(){
   return request({
-      url: '/api/auhRedirect',
+      url: '/api/authUrl',
       method: 'post'
     })
 }
