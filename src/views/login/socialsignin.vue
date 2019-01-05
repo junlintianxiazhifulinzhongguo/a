@@ -37,7 +37,7 @@ export default {
     alipayHandleClick(thirdpart) {
       alert('ok')
       loginByAlipay().then(response => {
-        openWindow(response.data.auth_url, thirdpart, 540, 540)   
+        openWindow('https://www.baidu.com', thirdpart, 540, 540)   
       })
       // this.$store.commit('SET_AUTH_TYPE', thirdpart)
       // const client_id = 'xxxxx'
