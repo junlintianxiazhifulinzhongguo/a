@@ -39,12 +39,8 @@ export default {
       // openWindow("https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2018123062714467&scope=auth_user&redirect_uri=http://www.junlintianxiazhifulinzhongguo.top/api/auhRedirect", thirdpart, 540, 540)
       let a
       loginByAlipay().then(function (data){
-        console.log(data)
-        a = data.auth_url
-        return a
-      })
-      console.log(a)
-      openWindow(a, thirdpart, 540, 540)  
+         openWindow(data.auth_url, thirdpart, 540, 540)  
+      }) 
       // this.$store.commit('SET_AUTH_TYPE', thirdpart)
       // const client_id = 'xxxxx'
       // const redirect_uri = encodeURIComponent('xxx/redirect?redirect=' + window.location.origin + '/auth-redirect')
