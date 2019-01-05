@@ -45,7 +45,7 @@ export default {
           console.log(auth_url)
           return auth_url
       }
-      console.log(url)
+      console.log(111111,url)
       openWindow(url, thirdpart, 540, 540)  
       // this.$store.commit('SET_AUTH_TYPE', thirdpart)
       // const client_id = 'xxxxx'
