@@ -36,7 +36,7 @@ export default {
     },
     alipayHandleClick(thirdpart) {
       // alert('ok')
-      openWindow('https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2018123062714467&scope=auth_user&redirect_uri=http://www.junlintianxiazhifulinzhongguo.top/api/auhRedirect', thirdpart, 540, 540)
+      openWindow("https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2018123062714467&scope=auth_user&redirect_uri=http://www.junlintianxiazhifulinzhongguo.top/api/auhRedirect", thirdpart, 540, 540)
       // loginByAlipay().then(function (response){
       //   openWindow(response.data.auth_url, thirdpart, 540, 540)   
       // })
