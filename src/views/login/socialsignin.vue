@@ -43,7 +43,7 @@ export default {
       // openWindow(url, thirdpart, 540, 540)
     },
     abc(thirdpart){
-       console.log(abc)
+       console.log('abc')
        console.log(this.auth_url)
        console.log(22222)
     },
