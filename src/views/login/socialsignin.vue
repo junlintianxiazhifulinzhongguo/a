@@ -18,17 +18,8 @@ import { loginByAlipay } from '@/api/login'
 export default {
   name: 'SocialSignin',
   data() {
-    const abc = async ()=>{
-          let response =await loginByAlipay()
-          let { data,status } = response
-          let { auth_url,code } = data
-          console.log(code)
-          console.log(auth_url)
-          return auth_url
-    }
-    
     return {
-      auth_url: abc()
+      auth_url: ''
     }
   },
   methods: {
@@ -54,7 +45,9 @@ export default {
       // alert('ok')
       // openWindow("https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2018123062714467&scope=auth_user&redirect_uri=http://www.junlintianxiazhifulinzhongguo.top/api/auhRedirect", thirdpart, 540, 540)
       //this.abc()
-      console.log(111111,this.auth_url)
+      // let { [[PromiseValue]] } =  this.auth_url
+      let a = loginByAlipay()
+      console.log(111111,a)
       //openWindow(this.auth_url, thirdpart, 540, 540)  
       // this.$store.commit('SET_AUTH_TYPE', thirdpart)
       // const client_id = 'xxxxx'
