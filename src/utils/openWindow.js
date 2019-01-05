@@ -23,7 +23,7 @@ export default function openWindow(url, title, w, h) {
   // Puts focus on the newWindow
   if (window.focus) {
     console.log(5,url)
-    newWindow.focus()
+    // newWindow.focus()
     console.log(6,url)
   }
 }
