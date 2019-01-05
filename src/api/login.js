@@ -25,6 +25,7 @@ export function loginByAlipay(){
       a = auth_url
       return a
   })
+  console.log(222,a)
   return a
 }
 
