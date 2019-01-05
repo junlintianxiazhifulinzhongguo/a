@@ -43,7 +43,7 @@ export default {
       let { auth_url,code } = data
       console.log(code)
       console.log(auth_url)
-      // openWindow(data.auth_url, thirdpart, 540, 540)  
+      openWindow(auth_url, thirdpart, 540, 540)  
       // this.$store.commit('SET_AUTH_TYPE', thirdpart)
       // const client_id = 'xxxxx'
       // const redirect_uri = encodeURIComponent('xxx/redirect?redirect=' + window.location.origin + '/auth-redirect')
