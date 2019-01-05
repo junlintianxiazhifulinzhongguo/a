@@ -17,6 +17,11 @@ import openWindow from '@/utils/openWindow'
 import { loginByAlipay } from '@/api/login'
 export default {
   name: 'SocialSignin',
+  data() {
+    return {
+      auth_url: ''
+    }
+  },
   methods: {
     wechatHandleClick(thirdpart) {
       alert('ok')
@@ -37,16 +42,16 @@ export default {
     alipayHandleClick(thirdpart) {
       // alert('ok')
       // openWindow("https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2018123062714467&scope=auth_user&redirect_uri=http://www.junlintianxiazhifulinzhongguo.top/api/auhRedirect", thirdpart, 540, 540)
-      let url =async ()=>{
+      async ()=>{
           let response =await loginByAlipay()
           let { data,status } = response
           let { auth_url,code } = data
           console.log(code)
           console.log(auth_url)
-          return auth_url
+          this.auth_url = auth_url
       }
-      console.log(111111,url)
-      openWindow(url, thirdpart, 540, 540)  
+      console.log(111111,this.auth_url)
+      openWindow(this.auth_url, thirdpart, 540, 540)  
       // this.$store.commit('SET_AUTH_TYPE', thirdpart)
       // const client_id = 'xxxxx'
       // const redirect_uri = encodeURIComponent('xxx/redirect?redirect=' + window.location.origin + '/auth-redirect')
