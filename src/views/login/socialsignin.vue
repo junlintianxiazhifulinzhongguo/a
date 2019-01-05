@@ -14,7 +14,7 @@
 
 <script>
 import openWindow from '@/utils/openWindow'
-
+import { loginByAlipay } from '@/api/login'
 export default {
   name: 'SocialSignin',
   methods: {
