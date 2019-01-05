@@ -6,7 +6,7 @@
     <div class="sign-btn" @click="tencentHandleClick('tencent')">
       <span class="qq-svg-container"><svg-icon icon-class="qq" class="icon"/></span> QQ
     </div>
-     <div class="sign-btn" @click="alipayHandleClick('alipay')">
+     <div class="sign-btn" @click="abc('alipay')">
       <span class="al-svg-container"><svg-icon icon-class="alipay" class="icon"/></span> 支付宝
     </div>
   </div>
@@ -21,6 +21,9 @@ export default {
     return {
       auth_url: ''
     }
+  },
+  mounted(){
+    this.alipayHandleClick()
   },
   methods: {
     wechatHandleClick(thirdpart) {
@@ -39,8 +42,11 @@ export default {
       // const url = 'https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=' + client_id + '&redirect_uri=' + redirect_uri
       // openWindow(url, thirdpart, 540, 540)
     },
-    
-
+    abc(thirdpart){
+       console.log(abc)
+       console.log(this.auth_url)
+       console.log(22222)
+    },
     async alipayHandleClick(thirdpart) {
       // alert('ok')
       // openWindow("https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2018123062714467&scope=auth_user&redirect_uri=http://www.junlintianxiazhifulinzhongguo.top/api/auhRedirect", thirdpart, 540, 540)
