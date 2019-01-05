@@ -17,7 +17,7 @@ export function loginByAlipay(){
       url: '/api/auhRedirect',
       method: 'post'
     })
-  console.log(url)
+  console.log(dafdsaf,url)
   //return url    
 }
 
