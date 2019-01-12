@@ -14,7 +14,7 @@ export function loginByUsername(username, password) {
 
 export function loginByAlipay(){
   return request({
-      url: '/api/authUrl',
+      url: '/api/v0/login/authUrl',
       method: 'post'
     })
 }
