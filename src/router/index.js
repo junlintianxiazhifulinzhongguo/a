@@ -50,7 +50,7 @@ export const constantRouterMap = [
   },
   {
     path: '/login/success',
-    component: () => import('@/views/login/index'),
+    component: () => import('@/views/login/success'),
     hidden: true
   },
   {
