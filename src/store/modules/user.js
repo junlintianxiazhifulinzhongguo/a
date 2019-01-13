@@ -86,9 +86,12 @@ const user = {
 
     // 第三方验证登录
     LoginByThirdparty({ commit, state }, code) {
+      console.log('无大幅释放')
       return new Promise((resolve, reject) => {
+        console.log('大厦发达省份')
         commit('SET_CODE', code)
         loginByThirdparty(state.status, state.email, state.code).then(response => {
+          console.log('大师傅')
           commit('SET_TOKEN', response.data.token)
           setToken(response.data.token)
           resolve()

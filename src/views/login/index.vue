@@ -141,6 +141,7 @@ export default {
       })
     },
     afterQRScan() {
+     
       const hash = window.location.hash.slice(1)
       const hashObj = getQueryObject(hash)
       const originUrl = window.location.origin
@@ -151,10 +152,14 @@ export default {
         alipay: 'code'
       }
       const codeName = hashObj[codeMap[this.auth_type]]
+      console.log('第三')
+      console.log(codeName)
       if (!codeName) {
         alert('第三方登录失败')
       } else {
+        console.log('第地方')
         this.$store.dispatch('LoginByThirdparty', codeName).then(() => {
+          console.log('第无')
           this.$router.push({ path: '/' })
         })
       }
