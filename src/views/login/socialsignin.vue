@@ -6,7 +6,7 @@
     <div class="sign-btn" @click="tencentHandleClick('tencent')">
       <span class="qq-svg-container"><svg-icon icon-class="qq" class="icon"/></span> QQ
     </div>
-     <div class="sign-btn" @click="abc('alipay')">
+     <div class="sign-btn" @click="alipayHandleClick('alipay')">
       <span class="al-svg-container"><svg-icon icon-class="alipay" class="icon"/></span> 支付宝
     </div>
   </div>
@@ -23,7 +23,7 @@ export default {
     }
   },
   mounted(){
-    this.alipayHandleClick()
+    this.getAuthUrl()
   },
   methods: {
     wechatHandleClick(thirdpart) {
@@ -42,29 +42,17 @@ export default {
       // const url = 'https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=' + client_id + '&redirect_uri=' + redirect_uri
       // openWindow(url, thirdpart, 540, 540)
     },
-    abc(thirdpart){
-       console.log('abc')
-       console.log(this.auth_url)
-       console.log(22222)
-       openWindow(this.auth_url, thirdpart, 540, 540)  
-    },
-    async alipayHandleClick(thirdpart) {
-      // alert('ok')
-      // openWindow("https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2018123062714467&scope=auth_user&redirect_uri=http://www.junlintianxiazhifulinzhongguo.top/api/auhRedirect", thirdpart, 540, 540)
+    async getAuthUrl(){
       let response = await loginByAlipay()
       let { data,status } = response
-      let { auth_url,code } = data
-      console.log(code)
+      console.log(data)
+      let { auth_url } = data
       console.log(auth_url)
-      this.auth_url=auth_url
-
-       console.log(111111,this.auth_url)
-      // openWindow(this.auth_url, thirdpart, 540, 540)  
-      // this.$store.commit('SET_AUTH_TYPE', thirdpart)
-      // const client_id = 'xxxxx'
-      // const redirect_uri = encodeURIComponent('xxx/redirect?redirect=' + window.location.origin + '/auth-redirect')
-      // const url = 'https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=' + client_id + '&redirect_uri=' + redirect_uri
-      // openWindow(url, thirdpart, 540, 540)
+      this.auth_url = auth_url
+    },
+    alipayHandleClick(thirdpart) {
+      this.$store.commit('SET_AUTH_TYPE', thirdpart)
+      openWindow(this.auth_url, thirdpart, 540, 540)  
     }
   }
 }
