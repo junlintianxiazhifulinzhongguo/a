@@ -49,6 +49,11 @@ export const constantRouterMap = [
     hidden: true
   },
   {
+    path: '/login/success',
+    component: () => import('@/views/login/index'),
+    hidden: true
+  },
+  {
     path: '/auth-redirect',
     component: () => import('@/views/login/authredirect'),
     hidden: true

@@ -141,7 +141,7 @@ export default {
       })
     },
     afterQRScan() {
-     
+      console.log('第111 ')
       const hash = window.location.hash.slice(1)
       const hashObj = getQueryObject(hash)
       const originUrl = window.location.origin

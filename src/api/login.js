@@ -18,7 +18,12 @@ export function loginByAlipay(){
       method: 'get'
     })
 }
-
+export function loginByThirdparty(){
+  return request({
+    url: '/api/v0/login/authRedirect',
+    method: 'get'
+  })
+}
 export function logout() {
   return request({
     url: '/login/logout',

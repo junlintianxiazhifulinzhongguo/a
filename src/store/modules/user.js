@@ -1,4 +1,4 @@
-import { loginByUsername, logout, getUserInfo } from '@/api/login'
+import { loginByUsername,loginByThirdparty,logout, getUserInfo } from '@/api/login'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 
 const user = {
@@ -21,7 +21,7 @@ const user = {
       state.code = code
     },
     SET_TOKEN: (state, token) => {
-      state.token = token
+      state.token = token                // SET_AUTH_TYPE
     },
     SET_INTRODUCTION: (state, introduction) => {
       state.introduction = introduction
@@ -92,6 +92,7 @@ const user = {
         commit('SET_CODE', code)
         loginByThirdparty(state.status, state.email, state.code).then(response => {
           console.log('大师傅')
+          console.log(Response.data)
           commit('SET_TOKEN', response.data.token)
           setToken(response.data.token)
           resolve()
