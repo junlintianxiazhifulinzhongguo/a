@@ -66,6 +66,7 @@
 
 <script>
 import { isvalidUsername } from '@/utils/validate'
+import { getQueryObject } from '@/utils/index'
 import LangSelect from '@/components/LangSelect'
 import SocialSign from './socialsignin'
 

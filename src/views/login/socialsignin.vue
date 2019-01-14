@@ -6,7 +6,7 @@
     <div class="sign-btn" @click="tencentHandleClick('tencent')">
       <span class="qq-svg-container"><svg-icon icon-class="qq" class="icon"/></span> QQ
     </div>
-     <div class="sign-btn" @click="alipayHandleClick('alipay')">
+    <div class="sign-btn" @click="alipayHandleClick('alipay')">
       <span class="al-svg-container"><svg-icon icon-class="alipay" class="icon"/></span> 支付宝
     </div>
   </div>
@@ -22,7 +22,7 @@ export default {
       auth_url: ''
     }
   },
-  mounted(){
+  mounted() {
     this.getAuthUrl()
   },
   methods: {
@@ -42,17 +42,17 @@ export default {
       // const url = 'https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=' + client_id + '&redirect_uri=' + redirect_uri
       // openWindow(url, thirdpart, 540, 540)
     },
-    async getAuthUrl(){
-      let response = await loginByAlipay()
-      let { data,status } = response
+    async getAuthUrl() {
+      const response = await loginByAlipay()
+      const { data } = response
       console.log(data)
-      let { auth_url } = data
+      const { auth_url } = data
       console.log(auth_url)
       this.auth_url = auth_url
     },
     alipayHandleClick(thirdpart) {
       this.$store.commit('SET_AUTH_TYPE', thirdpart)
-      openWindow(this.auth_url, thirdpart, 540, 540)  
+      openWindow(this.auth_url, thirdpart, 540, 540)
     }
   }
 }

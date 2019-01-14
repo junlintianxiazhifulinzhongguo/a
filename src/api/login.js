@@ -12,13 +12,13 @@ export function loginByUsername(username, password) {
   })
 }
 
-export function loginByAlipay(){
+export function loginByAlipay() {
   return request({
-      url: '/api/v0/login/authUrl',
-      method: 'get'
-    })
+    url: '/api/v0/login/authUrl',
+    method: 'get'
+  })
 }
-export function loginByThirdparty(){
+export function loginByThirdparty() {
   return request({
     url: '/api/v0/login/authRedirect',
     method: 'get'

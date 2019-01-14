@@ -1,27 +1,23 @@
 <template>
   <div class="success">
-        <h1>登录成功{{auth_url}}</h1>
+    <h1>登录成功</h1>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'loginSuccess',
+  name: 'Success',
   data() {
     return {
       auth_url: ''
     }
   },
-  create(){
+  create() {
     this.auth_url = this.$router.query
-  },
-  methods: {
-   
   }
 }
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
- 
 </style>
