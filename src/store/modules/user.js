@@ -1,4 +1,4 @@
-import { loginByUsername,loginByThirdparty,logout, getUserInfo } from '@/api/login'
+import { loginByUsername, loginByThirdparty, logout, getUserInfo } from '@/api/login'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 
 const user = {
@@ -21,7 +21,7 @@ const user = {
       state.code = code
     },
     SET_TOKEN: (state, token) => {
-      state.token = token                // SET_AUTH_TYPE
+      state.token = token // SET_AUTH_TYPE
     },
     SET_INTRODUCTION: (state, introduction) => {
       state.introduction = introduction
@@ -50,6 +50,7 @@ const user = {
       return new Promise((resolve, reject) => {
         loginByUsername(username, userInfo.password).then(response => {
           const data = response.data
+          console.log(data)
           commit('SET_TOKEN', data.token)
           setToken(response.data.token)
           resolve()
